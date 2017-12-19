@@ -26,29 +26,31 @@ struct JsTokeniserFunctions
     
     static bool isReservedKeyword (String::CharPointerType token, const int tokenLength) noexcept
     {
+        // A lot of these keywords were added in more recent implementations of ECMA script (e.g. int, try, boolean,...). I've commented some of them out because JUCE's default JS engine won't interpret them!
+        
         static const char* const keywords2Char[] =
-        { "if", "do", "in", nullptr };
+        { "if", "do", /*"in",*/ nullptr };
         
         static const char* const keywords3Char[] =
-        { "for", "int", "new", "try", "var", nullptr };
+        { "for", /*"int"*/, "new", /*"try"*/, "var", nullptr };
         
         static const char* const keywords4Char[] =
-        { "else", "null", "long", "goto", "eval", "true", "byte",
-            "case", "char", "void", "with", "this", nullptr };
+        { "else", "null", /*"long", "goto", "eval",*/ "true", /*"byte",*/
+            /*"case", "char", "void", "with"*/, "this", nullptr };
         
         static const char* const keywords5Char[] =
-        { "break", "catch", "const", "final", "false", "short", "while", "yield",
-            "throw", "float", nullptr };
+        { "break", /*"catch", "const", "final",*/ "false", /*"short",*/ "while", /*"yield",
+            "throw", "float",*/ nullptr };
         
         static const char* const keywords6Char[] =
-        { "delete", "double", "native", "public", "return", "static", "switch",
-            "throws", "typeof", nullptr };
+        { /*"delete", "double", "native", "public",*/ "return", /*"static", "switch",
+            "throws",*/ "typeof", nullptr };
         
-        static const char* const keywords7Char[] =
-        { "package", "private", "boolean", "default", "finally", nullptr };
+        /* static const char* const keywords7Char[] =
+        { "package", "private", "boolean", "default", "finally", nullptr };  */
         
         static const char* const keywordsOther[] =
-        { "volatile", "continue", "abstract", "debugger", "function", "protected", "arguments", "interface", "transient", "implements", "instanceof", "synchronized", nullptr };
+        { /*"volatile",*/ "continue", /*"abstract", "debugger",*/ "function", /*"protected", "arguments", "interface", "transient", "implements", "instanceof", "synchronized",*/ nullptr };
         
         const char* const* k;
         
@@ -59,7 +61,7 @@ struct JsTokeniserFunctions
             case 4:     k = keywords4Char; break;
             case 5:     k = keywords5Char; break;
             case 6:     k = keywords6Char; break;
-            case 7:     k = keywords7Char; break;
+            //case 7:     k = keywords7Char; break;
                 
             default:
                 if (tokenLength < 2 || tokenLength > 16)
