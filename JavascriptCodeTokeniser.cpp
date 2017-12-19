@@ -32,22 +32,18 @@ struct JsTokeniserFunctions
         { "if", "do", /*"in",*/ nullptr };
         
         static const char* const keywords3Char[] =
-        { "for", /*"int"*/, "new", /*"try"*/, "var", nullptr };
+        { "for", /*"int",*/ "new", /*"try",*/ "var", nullptr };
         
         static const char* const keywords4Char[] =
-        { "else", "null", /*"long", "goto", "eval",*/ "true", /*"byte",*/
-            /*"case", "char", "void", "with"*/, "this", nullptr };
+        { "else", "null", /*"long", "goto", "eval",*/ "true", /*"byte", "case", "char", "void", "with",*/ "this", nullptr };
         
         static const char* const keywords5Char[] =
-        { "break", /*"catch", "const", "final",*/ "false", /*"short",*/ "while", /*"yield",
-            "throw", "float",*/ nullptr };
+        { "break", /*"catch", "const", "final",*/ "false", /*"short",*/ "while", /*"yield", "throw", "float",*/ nullptr };
         
         static const char* const keywords6Char[] =
-        { /*"delete", "double", "native", "public",*/ "return", /*"static", "switch",
-            "throws",*/ "typeof", nullptr };
+        { /*"delete", "double", "native", "public",*/ "return", /*"static", "switch", "throws",*/ "typeof", nullptr };
         
-        /* static const char* const keywords7Char[] =
-        { "package", "private", "boolean", "default", "finally", nullptr };  */
+        /* static const char* const keywords7Char[] = { "package", "private", "boolean", "default", "finally", nullptr };  */
         
         static const char* const keywordsOther[] =
         { /*"volatile",*/ "continue", /*"abstract", "debugger",*/ "function", /*"protected", "arguments", "interface", "transient", "implements", "instanceof", "synchronized",*/ nullptr };
