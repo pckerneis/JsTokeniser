@@ -131,10 +131,9 @@ CodeEditorComponent::ColourScheme JavascriptTokeniser::getDefaultEditorColourSch
     return cs;
 }
 
-//#include "AppSettings.h"
 CodeEditorComponent::ColourScheme JavascriptTokeniser::getDefaultColourScheme()
 {
-    //return AppSettings::getCurrentEditorColourScheme();
+    return getDefaultEditorColourScheme();
 }
 
 
